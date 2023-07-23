@@ -1,0 +1,11 @@
+<div  class="manager_parent">
+    <div class="card" style="width: 18rem;" *ngFor="let user of managers">
+        <img src={{user.image}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{user.name}}</h5>
+          <p class="card-text">{{user.bio}}</p>
+          <button type="button" class="btn btn-primary" (click)="item(user)">View More</button>
+        </div>
+      </div>
+</div>
+

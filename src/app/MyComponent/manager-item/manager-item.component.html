@@ -1,0 +1,62 @@
+<div>
+
+    <button type="button" class="btn btn-success" (click)="status()">Success</button>
+
+</div>
+
+
+<div class="parent">
+    <div class="left">
+        <img src={{data.image}} alt="">
+    </div>
+    <div class="right">
+        <h2 class="card-title" style="text-align: center; margin-top: 3%;">{{data.name}}</h2>
+        <div class="card-body">
+            
+            <p class="card-text">Email: {{data.email}}</p>
+            <p class="card-text">Bio: {{data.bio}}</p>
+            <h5 class="card-text">Start-Date: {{data.start_date}}</h5>
+            <p class="card-text">Status: {{data.status.toUpperCase()}}</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="projects">
+    <h2>Projects</h2>
+    <table class="table table-striped-columns">
+        <thead>
+            <tr>
+              
+              <th scope="col">Title</th>
+              <th scope="col">Bio</th>
+              <th scope="col">Start_date</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let pro of project">
+            <tr>
+              <td>{{pro.name}}</td>
+              <td>{{pro.bio}}</td>
+              <td>{{pro.start_date}}</td>
+            </tr>
+            <!-- <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr> -->
+          </tbody>
+      </table>
+</div>
+

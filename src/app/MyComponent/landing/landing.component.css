@@ -1,0 +1,29 @@
+
+
+.cover_photo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover_photo img{
+    width: 100%;
+}
+
+.description{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.description>div:nth-child(1){
+    width: 60%;
+}
+
+.description>div:nth-child(2){
+    width: 40%;
+}
+
+
+

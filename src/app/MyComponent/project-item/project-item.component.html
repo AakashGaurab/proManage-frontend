@@ -1,0 +1,41 @@
+
+<div class="container">
+    <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{data.name}}</h5>
+          <p class="card-text">About: {{data.bio}}</p>
+          <p class="card-text">Start-Date: {{data.start_date}}</p>
+          <p class="card-text">End-Date:{{data.end_date}}</p>
+          <p class="card-text">Assigned-To: {{data.assigned_to}}</p>
+          <p class="card-text">Status: {{data.status}}</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+  <h3>Tasks</h3>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Biography</th>
+            <th scope="col">Status</th>
+            <th scope="col">Resources</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let tas of task">
+          <tr>
+            <!-- <th scope="row">1</th> -->
+            <td>{{tas.title}}</td>
+            <td>{{tas.bio}}</td>
+            <td>{{tas.status}} <form #myResource="ngForm" (submit)="addResource(myResource)">
+              <input type="text" name="resource" ngModel><button type="submit" class="btn btn-success" style="margin-left: 2%;"> Add Resource</button>
+            </form> </td>
+            <td>{{data.resource}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+</div>

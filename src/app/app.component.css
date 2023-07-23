@@ -1,0 +1,19 @@
+.user{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer{
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    padding: 5%;
+}
+
+.footer>div{
+    display: flex;
+    flex-direction: column;
+}
+

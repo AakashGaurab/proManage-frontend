@@ -1,0 +1,59 @@
+<h2 style="text-align: center; margin: 3%;">Welcome Please fill all Details </h2>
+
+<div class="container">
+    <form #signupForm="ngForm" class="row g-3 needs-validation" novalidate (submit)="sub(signupForm)">
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Image link</label>
+          <input type="text" class="form-control" id="validationCustom01"  required ngModel name="image">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="validationCustom02"  required ngModel name="name">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required ngModel name="email">
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Password</label>
+          <input type="password" class="form-control" id="validationCustom05" required ngModel name="password"> 
+          <div class="invalid-feedback">
+            Please provide a valid zip.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Tell Us About Yourself</label>
+          <!-- <input type="text" class="form-control" id="validationCustom03" required> -->
+          <textarea id="validationCustom03" class="form-control" cols="35" rows="5" ngModel name="bio"></textarea>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Tech stacks</label>
+          <input type="text" class="form-control" id="validationCustom05" required ngModel name="tech_stack">
+          <div class="invalid-feedback">
+            Please provide a valid zip.
+          </div>
+        </div>
+        
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Sign Up</button>
+        </div>
+      </form>
+</div>

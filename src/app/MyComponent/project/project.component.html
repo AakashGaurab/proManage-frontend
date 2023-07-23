@@ -1,0 +1,149 @@
+<div class="container">
+    <div class="row">
+      <div class="column">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns four sidebar-one" id="sidebar-one">
+        <h4>Add Project</h4>
+        <form #addProject="ngForm" (submit)="addProj(addProject)">
+        <input
+          type="text"
+          id="pitch-title"
+          class="u-full-width"
+          placeholder="Title"
+          name="name"
+          ngModel
+        />
+        <input
+          type="text"
+          id="pitch-image"
+          class="u-full-width"
+          placeholder="Bio"
+          name="bio"
+          ngModel
+        />
+        <!-- <input
+          type="text"
+          id="pitch-category"
+          class="u-full-width"
+          placeholder="Assign To"
+          name="assigned_to"
+          ngModel
+        /> -->
+        <select name="" id="pitch-category" class="u-full-width"  name="assigned_to" ngModel>
+          <option value="">Assign Manager</option>
+          <option *ngFor="let manager of managers">{{manager.name}}</option>
+        </select>
+        
+        
+        
+        <button id="add-pitch" class="u-full-width button button-primary" type="submit">
+          Add Project
+        </button>
+        </form>
+        <hr />
+
+        <h4>Add Task TO Project</h4>
+        <form #task_form="ngForm" (submit)="task_create(task_form)">
+        <input
+          type="text"
+          id="update-pitch-id"
+          class="u-full-width"
+          placeholder="Title of Project"
+          name="project_name"
+          ngModel
+        />
+        <input
+          type="text"
+          id="update-pitch-title"
+          class="u-full-width"
+          placeholder="Task Title"
+          name="title"
+          ngModel
+        />
+        <input
+          type="text"
+          id="update-pitch-image"
+          class="u-full-width"
+          placeholder="Bio"
+          name="bio"
+          ngModel
+        />
+        <input
+          type="text"
+          id="update-pitch-category"
+          class="u-full-width"
+          placeholder="Status"
+          name="status"
+          ngModel
+        />
+        
+        
+        <button id="update-pitch" class="u-full-width button button-primary">
+          Update all fields
+        </button>
+      </form>
+        <hr />
+
+        <h4>Update Status</h4>
+        <form #updateStatus="ngForm" (submit)="status(updateStatus)">
+        <input
+          type="text"
+          id="update-price-pitch-id"
+          class="u-full-width"
+          placeholder="Name"
+          name="name"
+          ngModel
+        />
+        <!-- <input
+          type="number"
+          id="update-price-pitch-price"
+          class="u-full-width"
+          placeholder="Price"
+          name=""
+        /> -->
+        <select name="" id="update-price-pitch-price" class="u-full-width" name="status" ngModel>
+          <option value="" selected>Select Status</option>
+            <option value="Planned">Planned</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select>
+        <button
+          id="update-price-pitch"
+          class="u-full-width button button-primary"
+          type="submit"
+        >
+          Update Status
+        </button>
+        </form>
+        <hr />
+        
+
+        
+      </div>
+
+      <div class="columns eight main">
+        <!--  -->
+        <div class="data-list-wrapper" id="data-list-wrapper">
+          <!-- append card-list that includes card here -->
+          <div *ngFor="let pro of project" class="card">
+            <div class="card-body">
+            <h4 class="card-title">{{pro.name}}</h4>
+            <!-- <p>id: {{pro._id.$oid}}</p> -->
+            <p class="card-founder">Bio: {{pro.bio}}</p>
+            <p class="card-category">Start-Date: {{pro.start_date}}</p>
+            <p class="card-category">End-Date: {{pro.end_date}}</p>
+            <p class="card-category">Assigned To: {{pro.assigned_to}}</p>
+            <p class="card-category">Status: {{pro.status}}</p>
+            <button type="button" class="btn btn-primary" (click)="view(pro)">View</button>
+            <button type="button" class="btn btn-danger" (click)="delete_data(pro)">Delete</button>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
