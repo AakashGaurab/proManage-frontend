@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 type todo_el = {
   _id:any,
   image:any,
@@ -44,5 +45,23 @@ export class ManagerComponent {
       //  console.log(user );
       this.json_data = JSON.stringify(user)
        this.router.navigate(['/manager-item'], { queryParams: { data: this.json_data } });
+    }
+
+
+    delete_manager(name:any){
+      console.log(name)
+      this.host.delete(`http://127.0.0.1:5000/manager/${name}`).subscribe(
+        (response:any)=>{
+          Swal.fire({
+            "icon":"success"
+          })
+          this.ngOnInit()
+        },
+        (error:any)=>{
+          Swal.fire({
+            "icon":"error"
+          })
+        }
+      )
     }
 }

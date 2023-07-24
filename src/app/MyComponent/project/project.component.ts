@@ -146,4 +146,30 @@ export class ProjectComponent {
       )
     }
 
+
+    sort(value:any){
+      if (value.value=="LTH"){
+          this.project = this.project.sort((a:any,b:any)=>{return new Date(a.start_date).getDate() - new Date(b.start_date).getDate() }) 
+          
+      }
+      else if (value.value=="HTL"){
+        this.project = this.project.sort((a:any,b:any)=>{return new Date(b.start_date).getDate() - new Date(a.start_date).getDate() }) 
+        
+      }
+      else {
+        this.ngOnInit()
+      }
+
+    }
+
+
+    filter(value:any){
+      if (value.value==""){
+        this.ngOnInit()
+        return;
+      }
+      this.project = this.project.filter((a:any)=>{return a.status==value.value})
+    }
+
 }
+

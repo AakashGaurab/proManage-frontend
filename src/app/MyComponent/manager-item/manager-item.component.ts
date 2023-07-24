@@ -48,7 +48,7 @@ export class ManagerItemComponent {
               }
             )
 
-            
+            this.ngOnInit()
           }
           // Handle the response data
         },

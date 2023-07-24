@@ -1,3 +1,7 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
 .container>div:nth-child(1){
     width: 60%;
     

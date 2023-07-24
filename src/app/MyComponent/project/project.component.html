@@ -82,7 +82,7 @@
         
         
         <button id="update-pitch" class="u-full-width button button-primary">
-          Update all fields
+           ADD Tasks
         </button>
       </form>
         <hr />
@@ -123,6 +123,22 @@
 
         
       </div>
+
+      <div class="columns eight main">
+        <div class="search-pitch-wrapper" id="search-pitch-wrapper">
+          <select id="search-by-select" (change)="sort($event.target)">
+            <option value="">Sort by Date</option>
+            <option value="LTH">Older</option>
+            <option value="HTL">Newer</option>
+          </select>
+          <select name="" id="" (change)="filter($event.target)" style="margin-left: 1%;">
+            <option value="">Filter By Status</option>
+            <option value="Completed">Completed</option>
+            <option value="Planned">Planned</option>
+            <option value="In Progress">In Progress</option>
+          </select>
+          
+        </div>
 
       <div class="columns eight main">
         <!--  -->
