@@ -23,7 +23,7 @@ export class ProjectItemComponent {
 
 
   addResource(form:any){
-    this.host.post(`http://127.0.0.1:5000/resource/${this.data.name}`,form.value).subscribe(
+    this.host.post(`https://promanage-backend.onrender.com/resource/${this.data.name}`,form.value).subscribe(
       (response:any)=>{
         Swal.fire({"icon":"success","title":response})
       },

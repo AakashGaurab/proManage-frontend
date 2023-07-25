@@ -37,7 +37,7 @@ export class ManagerItemComponent {
     }
 
 
-    this.http.patch("http://127.0.0.1:5000/manager/status",this.obj).subscribe(
+    this.http.patch("https://promanage-backend.onrender.com/manager/status",this.obj).subscribe(
         response => {
           console.log('POST request successful', response);
           if (200) {

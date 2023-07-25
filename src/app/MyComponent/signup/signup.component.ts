@@ -15,7 +15,7 @@ export class SignupComponent {
     sub(form:any){
       console.log(form.value);
       
-      this.http.post("http://127.0.0.1:5000/signup",form.value).subscribe(
+      this.http.post("https://promanage-backend.onrender.com/signup",form.value).subscribe(
         response => {
           console.log('POST request successful', response);
           if (200) {

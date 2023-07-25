@@ -16,7 +16,7 @@ export class ProjectComponent {
     constructor (private host:HttpClient,private elementRef: ElementRef,private router:Router){}
     ngOnInit(){
       if (this.role=="admin"){
-      this.host.get("http://127.0.0.1:5000/project").subscribe(
+      this.host.get("https://promanage-backend.onrender.com/project").subscribe(
         response=>{
           this.project = response;
         },
@@ -24,7 +24,7 @@ export class ProjectComponent {
       )
 
 
-      this.host.get("http://127.0.0.1:5000/manager").subscribe(
+      this.host.get("https://promanage-backend.onrender.com/manager").subscribe(
           response=>{
 
             this.managers = response;
@@ -33,7 +33,7 @@ export class ProjectComponent {
           error=>{alert(error)}
         )}
         else if (this.email!="null"){
-          this.host.get(`http://127.0.0.1:5000/project/${this.email}`).subscribe(
+          this.host.get(`https://promanage-backend.onrender.com/project/${this.email}`).subscribe(
             (response: any)=>{
               this.project = response;
             },
@@ -41,7 +41,7 @@ export class ProjectComponent {
           )
     
     
-          this.host.get("http://127.0.0.1:5000/manager").subscribe(
+          this.host.get("https://promanage-backend.onrender.com/manager").subscribe(
               response=>{
                 this.managers = response;
                 
@@ -62,7 +62,7 @@ export class ProjectComponent {
           Swal.fire({"icon":"info","title":"You are not authorised to create a Project"})
           return
        }
-       this.host.post("http://127.0.0.1:5000/project",form.value).subscribe(
+       this.host.post("https://promanage-backend.onrender.com/project",form.value).subscribe(
         response=>{
           console.log(response);
           Swal.fire({
@@ -84,7 +84,7 @@ export class ProjectComponent {
 
 
     delete_data(data:any){
-      this.host.delete("http://127.0.0.1:5000/project",data).subscribe(
+      this.host.delete("https://promanage-backend.onrender.com/project",data).subscribe(
         response =>{
           this.ngOnInit()
           Swal.fire(
@@ -108,7 +108,7 @@ export class ProjectComponent {
 
     status(form:any){
 
-      this.host.patch("http://127.0.0.1:5000/project",form.value).subscribe(
+      this.host.patch("https://promanage-backend.onrender.com/project",form.value).subscribe(
         response =>{
           Swal.fire(
             {
@@ -136,7 +136,7 @@ export class ProjectComponent {
 
     task_create(form:any){
       console.log(form.value)
-      this.host.post("http://127.0.0.1:5000/task_create",form.value).subscribe(
+      this.host.post("https://promanage-backend.onrender.com/task_create",form.value).subscribe(
         response=>{
           Swal.fire({"icon":"success","title":response})
         },

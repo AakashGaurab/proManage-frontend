@@ -31,7 +31,7 @@ export class ManagerComponent {
         this.router.navigate(['/landing']);
         return
       }
-        this.host.get("http://127.0.0.1:5000/manager").subscribe(
+        this.host.get("https://promanage-backend.onrender.com/manager").subscribe(
           response=>{
             console.log(response);
             this.managers = response;
@@ -50,7 +50,7 @@ export class ManagerComponent {
 
     delete_manager(name:any){
       console.log(name)
-      this.host.delete(`http://127.0.0.1:5000/manager/${name}`).subscribe(
+      this.host.delete(`https://promanage-backend.onrender.com/manager/${name}`).subscribe(
         (response:any)=>{
           Swal.fire({
             "icon":"success"

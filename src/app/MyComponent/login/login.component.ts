@@ -23,7 +23,7 @@ export class LoginComponent {
         sessionStorage.setItem("role","admin");
         return;
       }
-        this.http.post("http://127.0.0.1:5000/login",form.value).subscribe(
+        this.http.post("https://promanage-backend.onrender.com/login",form.value).subscribe(
         (response:any )=> {
 
           if (response) {
