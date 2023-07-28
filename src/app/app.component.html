@@ -24,6 +24,9 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample">Chat with BOT</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -73,5 +76,31 @@
     <img src="https://taskworld.com/_next/static/media/App_Store.63d851f6.svg" alt="">
   </div>
 
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      
+      <div class="chat_area">
+        <button *ngIf="flag" class="btn btn-primary" type="button" disabled>
+          <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+          <span role="status">Loading...</span>
+        </button>
+          {{data}}
+      </div>
+
+      <div class="input-group mb-3">
+        <form #form="ngForm" (submit)="userquery(form)">
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Query" ngModel name="query">
+          <button type="submit" class="btn btn-success">Ask</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
 </section>
 <p class="footer">© 2023 Copyright:Taskworld. All rights reserved. U.S. Patent 11,144,854</p>
