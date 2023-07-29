@@ -27,7 +27,7 @@ export class AppComponent {
         Swal.fire(
           {
             icon:"error",
-            title:error
+            title:"Limit Exceeded try after 1 min"
           }
         )
       }
