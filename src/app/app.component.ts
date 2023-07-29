@@ -19,7 +19,13 @@ export class AppComponent {
     this.host.post("https://promanage-backend.onrender.com/openai",form.value).subscribe(
       (response:any)=>{
         this.flag = false
-        this.data = response.choices[0].message.content
+        if (response.choices[0].message.content){
+          this.data = response.choices[0].message.content
+        }
+        else {
+          this.data = response.content;
+        }
+        
         
       },
       (error:any)=>{
